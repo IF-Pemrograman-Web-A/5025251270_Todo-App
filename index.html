@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Todo App</h1>
+        <p>Manage your tasks easily</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>My Tasks</h2>
+
+            <article class="selected">
+                <h3>Finish PWEB Assignment</h3>
+                <p>Complete the E01a Todo App assignment.</p>
+                <p>
+                    Priority:
+                    <span class="priority high">High</span>
+                </p>
+                <p>Due: 13 September 2026</p>
+            </article>
+
+            <article>
+                <h3>Study HTML Semantic</h3>
+                <p>Review semantic HTML elements.</p>
+                <p>
+                    Priority:
+                    <span class="priority medium">Medium</span>
+                </p>
+                <p>Due: 15 September 2026</p>
+            </article>
+
+            <article>
+                <h3>Practice CSS Grid</h3>
+                <p>Practice creating responsive layouts using CSS Grid.</p>
+                <p>
+                    Priority:
+                    <span class="priority medium">Medium</span>
+                </p>
+                <p>Due: 17 September 2026</p>
+            </article>
+
+            <article>
+                <h3>Read PWEB Material</h3>
+                <p>Read the latest Web Programming materials.</p>
+                <p>
+                    Priority:
+                    <span class="priority low">Low</span>
+                </p>
+                <p>Due: 20 September 2026</p>
+            </article>
+        </section>
+
+        <aside>
+            <h2>Todo Detail</h2>
+
+            <article>
+                <h3>Finish PWEB Assignment</h3>
+                <p>
+                    Complete the E01a Todo App assignment
+                    using HTML and CSS.
+                </p>
+                <p>
+                    <strong>Priority:</strong> High
+                </p>
+                <p>
+                    <strong>Due Date:</strong> 13 September 2026
+                </p>
+                <p>
+                    <strong>Status:</strong> In Progress
+                </p>
+                <button type="button">Edit Todo</button>
+            </article>
+        </aside>
+    </main>
+
+    <section>
+        <h2>Create New Todo</h2>
+
+        <form>
+            <div>
+                <label for="todo-title">Todo Title</label>
+                <input
+                    type="text"
+                    id="todo-title"
+                    name="todo-title"
+                    placeholder="Enter todo title"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="todo-description">Description</label>
+                <textarea
+                    id="todo-description"
+                    name="todo-description"
+                    placeholder="Enter todo description"
+                    required
+                ></textarea>
+            </div>
+
+            <div>
+                <label for="todo-priority">Priority</label>
+                <select id="todo-priority" name="todo-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="todo-date">Due Date</label>
+                <input
+                    type="date"
+                    id="todo-date"
+                    name="todo-date"
+                    required
+                >
+            </div>
+
+            <button type="submit">Create Todo</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pemrograman Web A</p>
+    </footer>
+
+</body>
+
+</html>

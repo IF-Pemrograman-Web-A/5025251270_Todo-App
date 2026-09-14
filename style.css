@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: #f5f6fa;
+    color: #252525;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 30px 7%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    margin-bottom: 4px;
+}
+
+header p {
+    color: #777777;
+    font-size: 15px;
+}
+
+main {
+    width: 86%;
+    max-width: 1200px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+}
+
+main > section,
+main > aside {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+}
+
+main h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+main > section h2 {
+    margin-bottom: 6px;
+}
+
+main > section article {
+    padding: 16px;
+    border: 1px solid #e2e4e9;
+    border-radius: 12px;
+    background-color: #fafafa;
+}
+
+main > section article h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+main > section article p {
+    font-size: 13px;
+    color: #666666;
+}
+
+main > section article.selected {
+    border: 2px solid #6c63ff;
+    background-color: #f4f2ff;
+}
+
+.priority {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.priority.high {
+    background-color: #ffe1e1;
+    color: #c62828;
+}
+
+.priority.medium {
+    background-color: #fff0c2;
+    color: #9a6a00;
+}
+
+.priority.low {
+    background-color: #dff5e5;
+    color: #287a3d;
+}
+
+main > aside article {
+    margin-top: 10px;
+}
+
+main > aside article h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+main > aside article p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+main > aside article strong {
+    color: #252525;
+}
+
+main > aside button {
+    margin-top: 10px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6c63ff;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main > aside button:hover {
+    background-color: #574fd6;
+}
+
+body > section {
+    width: 86%;
+    max-width: 1200px;
+    margin: 0 auto 35px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+}
+
+body > section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+body > section form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+body > section form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+body > section label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+body > section input,
+body > section textarea,
+body > section select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d7d9df;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+body > section textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+body > section input:focus,
+body > section textarea:focus,
+body > section select:focus {
+    outline: none;
+    border-color: #6c63ff;
+}
+
+body > section form button {
+    align-self: flex-start;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6c63ff;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+body > section form button:hover {
+    background-color: #574fd6;
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    color: #777777;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 24px 5%;
+    }
+    main {
+        width: 90%;
+        margin: 24px auto;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    main > section,
+    main > aside {
+        padding: 20px;
+    }
+    
+    body > section {
+        width: 90%;
+        padding: 20px;
+    }
+}
