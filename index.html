@@ -10,83 +10,52 @@
 
 <body>
 
-    <header>
-        <h1>Todo App</h1>
-        <p>Manage your tasks easily</p>
-    </header>
+<header>
+    <h1>Todo App</h1>
+    <p>Manage your tasks easily</p>
+    <button type="button" id="theme-toggle">Dark Mode</button>
+</header>
 
     <main>
-        <section>
+        <section id="todo-list">
             <h2>My Tasks</h2>
-
-            <article class="selected">
-                <h3>Finish PWEB Assignment</h3>
-                <p>Complete the E01a Todo App assignment.</p>
-                <p>
-                    Priority:
-                    <span class="priority high">High</span>
-                </p>
-                <p>Due: 13 September 2026</p>
-            </article>
-
-            <article>
-                <h3>Study HTML Semantic</h3>
-                <p>Review semantic HTML elements.</p>
-                <p>
-                    Priority:
-                    <span class="priority medium">Medium</span>
-                </p>
-                <p>Due: 15 September 2026</p>
-            </article>
-
-            <article>
-                <h3>Practice CSS Grid</h3>
-                <p>Practice creating responsive layouts using CSS Grid.</p>
-                <p>
-                    Priority:
-                    <span class="priority medium">Medium</span>
-                </p>
-                <p>Due: 17 September 2026</p>
-            </article>
-
-            <article>
-                <h3>Read PWEB Material</h3>
-                <p>Read the latest Web Programming materials.</p>
-                <p>
-                    Priority:
-                    <span class="priority low">Low</span>
-                </p>
-                <p>Due: 20 September 2026</p>
-            </article>
         </section>
 
         <aside>
             <h2>Todo Detail</h2>
 
             <article>
-                <h3>Finish PWEB Assignment</h3>
-                <p>
+                <h3 id="detail-title">Finish PWEB Assignment</h3>
+
+                <p id="detail-description">
                     Complete the E01a Todo App assignment
                     using HTML and CSS.
                 </p>
+
                 <p>
-                    <strong>Priority:</strong> High
+                    <strong>Priority:</strong>
+                    <span id="detail-priority">High</span>
                 </p>
+
                 <p>
-                    <strong>Due Date:</strong> 13 September 2026
+                    <strong>Due Date:</strong>
+                    <span id="detail-due-date">13 September 2026</span>
                 </p>
+
                 <p>
-                    <strong>Status:</strong> In Progress
+                    <strong>Status:</strong>
+                    <span id="detail-status">In Progress</span>
                 </p>
-                <button type="button">Edit Todo</button>
+
+                <button type="button" id="edit-todo-button">Edit Todo</button>
             </article>
         </aside>
     </main>
 
     <section>
-        <h2>Create New Todo</h2>
+        <h2 id="form-title">Create New Todo</h2>
 
-        <form>
+        <form id="todo-form">
             <div>
                 <label for="todo-title">Todo Title</label>
                 <input
@@ -127,7 +96,7 @@
                 >
             </div>
 
-            <button type="submit">Create Todo</button>
+            <button type="submit" id="form-submit">Create Todo</button>
         </form>
     </section>
 
@@ -135,6 +104,7 @@
         <p>&copy; 2026 Pemrograman Web A</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

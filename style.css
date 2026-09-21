@@ -28,6 +28,32 @@ header p {
     font-size: 15px;
 }
 
+#theme-toggle {
+    margin-top: 15px;
+    padding: 9px 16px;
+    border: 1px solid #6c63ff;
+    border-radius: 8px;
+    background-color: #f4f2ff;
+    color: #574fd6;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: #e8e5ff;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #3b3860;
+    color: #ffffff;
+    border-color: #6c63ff;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: #4a4675;
+}
+
 main {
     width: 86%;
     max-width: 1200px;
@@ -104,6 +130,52 @@ main > section article.selected {
 .priority.low {
     background-color: #dff5e5;
     color: #287a3d;
+}
+
+.delete-todo {
+    margin-top: 12px;
+    margin-right: 8px;
+    padding: 7px 12px;
+    border: 1px solid #e0b4b4;
+    border-radius: 7px;
+    background-color: #fff5f5;
+    color: #c62828;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-todo:hover {
+    background-color: #ffe1e1;
+}
+
+.complete-todo {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin: 0 6px 0 0;
+    border: 2px solid #6c63ff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.complete-todo:checked {
+    background-color: #6c63ff;
+    border-color: #6c63ff;
+    position: relative;
+}
+
+.complete-todo:checked::after {
+    content: "✓";
+    display: block;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 14px;
 }
 
 main > aside article {
@@ -219,6 +291,59 @@ footer {
     padding: 24px;
     color: #777777;
     font-size: 13px;
+}
+
+main > section article.completed {
+    opacity: 0.6;
+}
+
+main > section article.completed h3 {
+    text-decoration: line-through;
+}
+
+body.dark-mode {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+}
+
+body.dark-mode header,
+body.dark-mode main > section,
+body.dark-mode main > aside {
+    background-color: #2b2b2b;
+    border-color: #444444;
+}
+
+body.dark-mode > section {
+    background-color: #2b2b2b;
+    border-color: #444444;
+}
+
+body.dark-mode header p,
+body.dark-mode main > section article p,
+body.dark-mode main > aside article p {
+    color: #cccccc;
+}
+
+body.dark-mode main > section article {
+    background-color: #333333;
+    border-color: #444444;
+}
+
+body.dark-mode main > section article.selected {
+    background-color: #3b3860;
+    border-color: #6c63ff;
+}
+
+body.dark-mode main > aside article strong {
+    color: #f5f5f5;
+}
+
+body.dark-mode > section input,
+body.dark-mode > section textarea,
+body.dark-mode > section select {
+    background-color: #333333;
+    color: #f5f5f5;
+    border-color: #555555;
 }
 
 @media (max-width: 768px) {
