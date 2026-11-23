@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,8 +25,34 @@ header h1 {
 }
 
 header p {
-    color: #777777;
+    color: #666666;
     font-size: 15px;
+}
+
+#theme-toggle {
+    margin-top: 15px;
+    padding: 9px 16px;
+    border: 1px solid #594fe0;
+    border-radius: 8px;
+    background-color: #f4f2ff;
+    color: #493fc5;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: #e8e5ff;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #3b3860;
+    color: #ffffff;
+    border-color: #a9a3ff;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: #4a4675;
 }
 
 main {
@@ -79,7 +106,7 @@ main > section article p {
 }
 
 main > section article.selected {
-    border: 2px solid #6c63ff;
+    border: 2px solid #594fe0;
     background-color: #f4f2ff;
 }
 
@@ -93,17 +120,63 @@ main > section article.selected {
 
 .priority.high {
     background-color: #ffe1e1;
-    color: #c62828;
+    color: #a51e1e;
 }
 
 .priority.medium {
     background-color: #fff0c2;
-    color: #9a6a00;
+    color: #805800;
 }
 
 .priority.low {
     background-color: #dff5e5;
-    color: #287a3d;
+    color: #216b35;
+}
+
+.delete-todo {
+    margin-top: 12px;
+    margin-right: 8px;
+    padding: 7px 12px;
+    border: 1px solid #e0b4b4;
+    border-radius: 7px;
+    background-color: #fff5f5;
+    color: #a51e1e;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-todo:hover {
+    background-color: #ffe1e1;
+}
+
+.complete-todo {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin: 0 6px 0 0;
+    border: 2px solid #594fe0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.complete-todo:checked {
+    background-color: #594fe0;
+    border-color: #594fe0;
+    position: relative;
+}
+
+.complete-todo:checked::after {
+    content: "✓";
+    display: block;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 14px;
 }
 
 main > aside article {
@@ -130,7 +203,7 @@ main > aside button {
     padding: 9px 16px;
     border: none;
     border-radius: 8px;
-    background-color: #6c63ff;
+    background-color: #594fe0;
     color: white;
     font-family: inherit;
     font-weight: bold;
@@ -138,7 +211,7 @@ main > aside button {
 }
 
 main > aside button:hover {
-    background-color: #574fd6;
+    background-color: #483fc5;
 }
 
 body > section {
@@ -184,6 +257,7 @@ body > section select {
     font-family: inherit;
     font-size: 14px;
     background-color: #fafafa;
+    color: #252525;
 }
 
 body > section textarea {
@@ -194,8 +268,7 @@ body > section textarea {
 body > section input:focus,
 body > section textarea:focus,
 body > section select:focus {
-    outline: none;
-    border-color: #6c63ff;
+    border-color: #594fe0;
 }
 
 body > section form button {
@@ -203,7 +276,7 @@ body > section form button {
     padding: 10px 18px;
     border: none;
     border-radius: 8px;
-    background-color: #6c63ff;
+    background-color: #594fe0;
     color: white;
     font-family: inherit;
     font-weight: bold;
@@ -211,20 +284,75 @@ body > section form button {
 }
 
 body > section form button:hover {
-    background-color: #574fd6;
+    background-color: #483fc5;
 }
 
 footer {
     text-align: center;
     padding: 24px;
-    color: #777777;
+    color: #666666;
     font-size: 13px;
+}
+
+main > section article.completed {
+    opacity: 0.6;
+}
+
+main > section article.completed h3 {
+    text-decoration: line-through;
+}
+
+body.dark-mode {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+}
+
+body.dark-mode header,
+body.dark-mode main > section,
+body.dark-mode main > aside {
+    background-color: #2b2b2b;
+    border-color: #444444;
+}
+
+body.dark-mode > section {
+    background-color: #2b2b2b;
+    border-color: #444444;
+}
+
+body.dark-mode header p,
+body.dark-mode main > section article p,
+body.dark-mode main > aside article p,
+body.dark-mode footer {
+    color: #cccccc;
+}
+
+body.dark-mode main > section article {
+    background-color: #333333;
+    border-color: #444444;
+}
+
+body.dark-mode main > section article.selected {
+    background-color: #3b3860;
+    border-color: #a9a3ff;
+}
+
+body.dark-mode main > aside article strong {
+    color: #f5f5f5;
+}
+
+body.dark-mode > section input,
+body.dark-mode > section textarea,
+body.dark-mode > section select {
+    background-color: #333333;
+    color: #f5f5f5;
+    border-color: #777777;
 }
 
 @media (max-width: 768px) {
     header {
         padding: 24px 5%;
     }
+
     main {
         width: 90%;
         margin: 24px auto;
@@ -236,9 +364,70 @@ footer {
     main > aside {
         padding: 20px;
     }
-    
+
     body > section {
         width: 90%;
         padding: 20px;
     }
+}
+
+/* Media Capture */
+#camera-preview,
+#photo-preview {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#camera-preview {
+    background-color: #222222;
+}
+
+#photo-preview {
+    object-fit: contain;
+}
+
+.todo-image {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* Accessibility - Keyboard Focus */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+article[tabindex]:focus-visible {
+    outline: 3px solid #594fe0;
+    outline-offset: 3px;
+}
+.complete-todo:focus-visible {
+    outline: 3px solid #594fe0;
+    outline-offset: 3px;
+}
+body.dark-mode button:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode textarea:focus-visible,
+body.dark-mode select:focus-visible,
+body.dark-mode article[tabindex]:focus-visible {
+    outline-color: #a9a3ff;
+}
+/* Accessibility - Camera Controls */
+fieldset {
+    border: 1px solid #d7d9df;
+    border-radius: 8px;
+    padding: 15px;
+}
+legend {
+    padding: 0 6px;
+    font-weight: bold;
+}
+body.dark-mode fieldset {
+    border-color: #777777;
 }
