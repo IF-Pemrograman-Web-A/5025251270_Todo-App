@@ -160,3 +160,32 @@ async function scheduleAllNotifications() {
     }
 }
 scheduleAllNotifications();
+
+let deferredPrompt;
+const installButton = document.getElementById("install-app");
+
+window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+    installButton.hidden = false;
+});
+
+installButton?.addEventListener("click", async () => {
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    const { outcome } = await deferredPrompt.userChoice;
+
+    if (outcome === "accepted") {
+        console.log("Todo App berhasil di-install.");
+    }
+
+    deferredPrompt = null;
+    installButton.hidden = true;
+});
+
+window.addEventListener("appinstalled", () => {
+    installButton.hidden = true;
+    console.log("Todo App telah di-install.");
+});

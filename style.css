@@ -29,7 +29,9 @@ header p {
     font-size: 15px;
 }
 
-#theme-toggle {
+#theme-toggle,
+#enable-notifications,
+#install-app {
     margin-top: 15px;
     padding: 9px 16px;
     border: 1px solid #594fe0;
@@ -41,17 +43,23 @@ header p {
     cursor: pointer;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover,
+#enable-notifications:hover,
+#install-app:hover {
     background-color: #e8e5ff;
 }
 
-body.dark-mode #theme-toggle {
+body.dark-mode #theme-toggle,
+body.dark-mode #enable-notifications,
+body.dark-mode #install-app {
     background-color: #3b3860;
     color: #ffffff;
     border-color: #a9a3ff;
 }
 
-body.dark-mode #theme-toggle:hover {
+body.dark-mode #theme-toggle:hover,
+body.dark-mode #enable-notifications:hover,
+body.dark-mode #install-app:hover {
     background-color: #4a4675;
 }
 
@@ -483,10 +491,16 @@ body.dark-mode fieldset {
     display: flex; flex-direction: column; gap: 12px;
 }
 .camera-controls { display: flex; flex-wrap: wrap; gap: 8px; }
-.camera-controls button, #enable-notifications {
-    padding: 8px 12px; border: 1px solid #594fe0; border-radius: 8px;
-    background: #f4f2ff; color: #493fc5; font: inherit; cursor: pointer;
+.camera-controls button {
+    padding: 8px 12px;
+    border: 1px solid #594fe0;
+    border-radius: 8px;
+    background: #f4f2ff;
+    color: #493fc5;
+    font: inherit;
+    cursor: pointer;
 }
+
 #enable-notifications { margin: 15px 0 0 8px; }
 .edit-main { grid-template-columns: minmax(0, 1fr); }
 .edit-section form { display: flex; flex-direction: column; gap: 16px; }
